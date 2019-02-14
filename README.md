@@ -1,2 +1,2 @@
 # wistlerator
-Samples management tool
+samples management tool
