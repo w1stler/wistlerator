@@ -69,11 +69,10 @@ def create_sample(request):
             form.arrival_date = request.POST["arrival_date"]
             form.content = request.POST["content"]
             form.comments = request.POST["comments"]
-            import sys
-            import pdb
-            sys.stdout = sys.__stdout__
-            pdb.set_trace()
-            form.category = Category.objects.filter(id=request.POST["category"])[0]
+            try:
+                form.category = Category.objects.get(pk=request.POST["category"])
+            except Category.DoesNotExist:
+                raise
             form.save()
             return redirect('detail_sample', sample_id=form.pk)
     else:
