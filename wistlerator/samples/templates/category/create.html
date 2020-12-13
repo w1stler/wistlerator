@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block main_content %}
+    <div class="container-fluid">
+        <h3>Create category form</h3>
+        <form method="POST" class="post-form">{% csrf_token %}
+            {{ form.as_ul }}
+            <button type="submit" class="save btn btn-default">Save</button>
+        </form>
+    </div>
+{% endblock %}

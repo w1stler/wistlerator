@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block main_content %}
+    <div class="container-fluid">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/category">Categories</a></li>
+                <li class="breadcrumb-item active"><a href="">{{ category.name }}</a></li>
+            </ol>
+        </nav>
+        <h1>{{ category.name }}</h1>
+        <ul class="list">
+            <li>Content: {{ category.name }}</li>
+            <li>Description: {{ category.description }}</li>
+        </ul>
+    {% endblock %}

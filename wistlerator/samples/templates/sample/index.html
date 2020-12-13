@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block main_content %}
+  <div class="container-fluid">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item"><a href="/sample">Samples</a></li>
+      </ol>
+    </nav>
+    <div class="d-flex justify-content-between">
+      <h2 class="mb-0 d-inline p-2">Samples</h2>
+      <button type="button" class="btn btn-primary d-inline p-2-flex flex-row-reverse"><a href="/sample/create" class="lead text-white">Create sample</a></button>
+    </div>
+      {% if samples %}
+        <ul class="list">
+          {% for sample in samples %}
+            <li class="list"><a href="{% url 'detail_sample' sample.id %}">{{ sample.name }}</a></li>
+          {% endfor %}
+        </ul>
+      {% else %}
+        <p class="lead">No samples are available.</p>
+      {% endif %}
+    </container>
+  </div>
+{% endblock %}
